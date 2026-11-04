@@ -52,10 +52,10 @@ class DifferentialTests(unittest.TestCase):
         # A negative Ada 'Image has no leading space.  Exact protocol
         # formatting must not depend on sign or padding in 'Image.
         cases = (
-            ((1, 2, 3, 4), "OK -2\\n"),
-            ((1, 0, 0, 1), "OK 1\\n"),
-            ((0, 0, 0, 0), "OK 0\\n"),
-            ((32768, 0, 0, 1), "INVALID_INPUT 0\\n"),
+            ((1, 2, 3, 4), "OK -2\n"),
+            ((1, 0, 0, 1), "OK 1\n"),
+            ((0, 0, 0, 0), "OK 0\n"),
+            ((32768, 0, 0, 1), "INVALID_INPUT 0\n"),
         )
         for values, expected_output in cases:
             with self.subTest(values=values):
