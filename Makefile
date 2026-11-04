@@ -15,7 +15,7 @@ prove:
 test-oracle:
 	$(PYTHON) -B -m unittest tests.test_oracle -v
 
-test-differential:
+test-differential: build
 	$(PYTHON) -B -m unittest tests.test_differential -v
 
 test: build test-oracle test-differential

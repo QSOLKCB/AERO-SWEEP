@@ -48,6 +48,28 @@ class DifferentialTests(unittest.TestCase):
         actual = {"status": pieces[0], "result": int(pieces[1])}
         self.assertEqual(actual, expected, f"inputs={values}")
 
+    def test_cli_output_format(self) -> None:
+        # A negative Ada 'Image has no leading space.  Exact protocol
+        # formatting must not depend on sign or padding in 'Image.
+        cases = (
+            ((1, 2, 3, 4), "OK -2\\n"),
+            ((1, 0, 0, 1), "OK 1\\n"),
+            ((0, 0, 0, 0), "OK 0\\n"),
+            ((32768, 0, 0, 1), "INVALID_INPUT 0\\n"),
+        )
+        for values, expected_output in cases:
+            with self.subTest(values=values):
+                completed = subprocess.run(
+                    [str(self.executable), *(str(value) for value in values)],
+                    check=False,
+                    capture_output=True,
+                    text=True,
+                    timeout=10,
+                )
+                self.assertEqual(completed.returncode, 0, completed.stderr)
+                self.assertEqual(completed.stderr, "")
+                self.assertEqual(completed.stdout, expected_output)
+
     def test_pinned_cases(self) -> None:
         for case in FIXTURES:
             with self.subTest(case=case["id"]):

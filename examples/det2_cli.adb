@@ -1,4 +1,6 @@
 with Ada.Command_Line;
+with Ada.Strings;
+with Ada.Strings.Fixed;
 with Ada.Text_IO;
 with Determinant;
 with Interfaces;
@@ -39,7 +41,9 @@ begin
       case Answer.Status is
          when Determinant.OK =>
             Put_Line
-              ("OK" & Determinant.Exact_Result'Image (Answer.Value));
+              ("OK " & Ada.Strings.Fixed.Trim
+                 (Determinant.Exact_Result'Image (Answer.Value),
+                  Ada.Strings.Both));
          when Determinant.Invalid_Input =>
             Put_Line ("INVALID_INPUT 0");
       end case;
