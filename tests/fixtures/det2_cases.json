@@ -1,0 +1,156 @@
+[
+  {
+    "id": "foundation-001",
+    "values": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "status": "OK",
+    "result": -2
+  },
+  {
+    "id": "max-positive",
+    "values": [
+      32767,
+      32767,
+      -32767,
+      32767
+    ],
+    "status": "OK",
+    "result": 2147352578
+  },
+  {
+    "id": "max-positive-alt",
+    "values": [
+      32767,
+      -32767,
+      32767,
+      32767
+    ],
+    "status": "OK",
+    "result": 2147352578
+  },
+  {
+    "id": "max-negative",
+    "values": [
+      32767,
+      32767,
+      32767,
+      -32767
+    ],
+    "status": "OK",
+    "result": -2147352578
+  },
+  {
+    "id": "all-zero",
+    "values": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "status": "OK",
+    "result": 0
+  },
+  {
+    "id": "equal-rows",
+    "values": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "status": "OK",
+    "result": 0
+  },
+  {
+    "id": "identity",
+    "values": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "status": "OK",
+    "result": 1
+  },
+  {
+    "id": "zero-determinant",
+    "values": [
+      2,
+      4,
+      1,
+      2
+    ],
+    "status": "OK",
+    "result": 0
+  },
+  {
+    "id": "negative-unit",
+    "values": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "status": "OK",
+    "result": -1
+  },
+  {
+    "id": "bounds-positive",
+    "values": [
+      32767,
+      0,
+      0,
+      -32767
+    ],
+    "status": "OK",
+    "result": -1073676289
+  },
+  {
+    "id": "just-over-positive",
+    "values": [
+      32768,
+      0,
+      0,
+      1
+    ],
+    "status": "INVALID_INPUT",
+    "result": 0
+  },
+  {
+    "id": "just-under-negative",
+    "values": [
+      -32768,
+      0,
+      0,
+      1
+    ],
+    "status": "INVALID_INPUT",
+    "result": 0
+  },
+  {
+    "id": "far-out-of-domain",
+    "values": [
+      2147483647,
+      1,
+      1,
+      1
+    ],
+    "status": "INVALID_INPUT",
+    "result": 0
+  },
+  {
+    "id": "min-i32",
+    "values": [
+      -2147483648,
+      1,
+      1,
+      1
+    ],
+    "status": "INVALID_INPUT",
+    "result": 0
+  }
+]
