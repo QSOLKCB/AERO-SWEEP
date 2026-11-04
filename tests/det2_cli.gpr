@@ -1,0 +1,14 @@
+with "../kernel/aero_sweep.gpr";
+
+project Det2_CLI is
+   for Languages use ("Ada");
+   for Source_Dirs use ("../examples");
+   for Main use ("det2_cli.adb");
+   for Object_Dir use "../build/cli-obj";
+   for Exec_Dir use "../build/bin";
+
+   package Compiler is
+      for Default_Switches ("Ada") use
+        ("-gnat2022", "-gnata", "-gnatwe");
+   end Compiler;
+end Det2_CLI;

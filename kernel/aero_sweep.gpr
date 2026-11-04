@@ -1,0 +1,10 @@
+project Aero_Sweep is
+   for Languages use ("Ada");
+   for Source_Dirs use ("algebra");
+   for Object_Dir use "../build/kernel-obj";
+
+   package Compiler is
+      for Default_Switches ("Ada") use
+        ("-gnat2022", "-gnata", "-gnatwe");
+   end Compiler;
+end Aero_Sweep;

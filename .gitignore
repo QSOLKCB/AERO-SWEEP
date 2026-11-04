@@ -1,0 +1,7 @@
+# Local GNAT/GPR and test artifacts (never evidence)
+/build/
+/kernel/gnatprove/
+/kernel/obj/
+/tests/obj/
+__pycache__/
+*.py[cod]
