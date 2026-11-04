@@ -1,3 +1,5 @@
+with Interfaces;
+
 package body Determinant with SPARK_Mode => On is
 
    function In_Bounds (X : Interfaces.Integer_32) return Boolean is
